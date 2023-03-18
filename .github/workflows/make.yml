@@ -12,7 +12,7 @@ jobs:
     runs-on: ubuntu-latest
 
     steps:
-    - run: sudo apt install libext2fs-dev perl automake
+    - run: sudo apt install libext2fs-dev perl automake autoconf m4
     - uses: actions/checkout@v3
     - name: Configure
       run: ./configure
