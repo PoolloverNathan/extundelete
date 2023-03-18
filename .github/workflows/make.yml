@@ -1,0 +1,27 @@
+name: Build and upload
+
+on:
+  push:
+    branches: [ "master" ]
+  pull_request:
+    branches: [ "master" ]
+
+jobs:
+  build:
+
+    runs-on: ubuntu-latest
+
+    steps:
+    - uses: actions/checkout@v3
+    - name: Configure
+      run: ./configure
+    - name: Build
+      run: make
+    - name: Upload
+      uses: actions/upload-artifact@v3.1.2
+      with:
+        # Artifact name
+        name: extundelete
+        # A file, directory or wildcard pattern that describes what to upload
+        path: .
+        # The desired behavior if no files are found using the provided path.
