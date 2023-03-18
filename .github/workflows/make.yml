@@ -12,6 +12,7 @@ jobs:
     runs-on: ubuntu-latest
 
     steps:
+    - run: sudo apt install ext2fs
     - uses: actions/checkout@v3
     - name: Configure
       run: ./configure
