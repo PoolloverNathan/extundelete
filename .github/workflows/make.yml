@@ -12,7 +12,7 @@ jobs:
     runs-on: ubuntu-latest
 
     steps:
-    - run: sudo apt install ext2fs
+    - run: sudo apt install libext2fs
     - uses: actions/checkout@v3
     - name: Configure
       run: ./configure
